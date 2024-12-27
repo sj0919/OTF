@@ -4,35 +4,39 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.week1.R
+import com.example.week1.data.Contact
 import com.example.week1.databinding.FragmentHomeBinding
+import com.example.week1.ContactsAdapter
+
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
+    private lateinit var contactsAdapter: ContactsAdapter
+    private val contactList = listOf(
+        Contact("만년닭강정-한밭야구장점", "영업시간 9:00-18:30", "123-456-7890", R.drawable.img1),
+        Contact("성심당", "영업시간 9:00-14:00", "987-654-3210",R.drawable.img1),
+        Contact("신바람식당", "9:20-15:00", "555-123-4567",R.drawable.img1)
+    )
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        // RecyclerView 설정
+        contactsAdapter = ContactsAdapter(contactList)
+        binding.contactsRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = contactsAdapter
         }
-        return root
+
+        return binding.root
     }
 
     override fun onDestroyView() {
