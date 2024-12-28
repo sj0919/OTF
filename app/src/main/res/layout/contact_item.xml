@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF">
+    android:background="@drawable/container_border"
+    android:backgroundTint="#FFFFFF"
+    android:padding="10dp">
 
     <!-- 연락처 이미지 표시 ImageView -->
     <ImageView
         android:id="@+id/contactImage"
         android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,34 +23,49 @@
         android:id="@+id/contactName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
         android:text="Contact Name"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/contactImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/contactImage" />
 
     <!-- 시간 표시 TextView -->
     <TextView
         android:id="@+id/contactTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="Time"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@id/contactImage"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/contactName"
         app:layout_constraintTop_toBottomOf="@id/contactName" />
 
-    <!-- 전화번호 표시 TextView -->
-    <TextView
-        android:id="@+id/contactPhoneNumber"
+    <!-- 전화번호 아이콘과 전화번호 표시 TextView -->
+    <LinearLayout
+        android:id="@+id/contactPhoneLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:orientation="horizontal"
         android:layout_marginTop="8dp"
-        android:text="Phone Number"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@id/contactImage"
-        app:layout_constraintTop_toBottomOf="@id/contactTime" />
+        app:layout_constraintStart_toStartOf="@id/contactTime"
+        app:layout_constraintTop_toBottomOf="@id/contactTime">
+
+        <!-- 전화 아이콘 ImageView -->
+        <ImageView
+            android:id="@+id/phoneIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/phone" />
+
+        <!-- 전화번호 표시 TextView -->
+        <TextView
+            android:id="@+id/contactPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textSize="13sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
