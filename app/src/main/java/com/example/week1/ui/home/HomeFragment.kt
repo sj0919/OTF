@@ -21,7 +21,12 @@ class HomeFragment : Fragment() {
     private val contactList = listOf(
         Contact("만년닭강정-한밭야구장점", "영업시간 9:00-18:30", "123-456-7890", R.drawable.img1),
         Contact("성심당", "영업시간 9:00-14:00", "987-654-3210",R.drawable.img1),
-        Contact("신바람식당", "9:20-15:00", "555-123-4567",R.drawable.img1)
+        Contact("신바람식당", "9:20-15:00", "555-123-4567",R.drawable.img1),
+        Contact("플라잉팬","9:00-18:00","042-555-1252",R.drawable.img1),
+        Contact("정식당","9:00-14:00","042-2142-2224",R.drawable.img1),
+        Contact("5.5닭갈비","9:00-14:00","042-1112-2224",R.drawable.img1),
+        Contact("조마루감자탕","9:00-18:00","042-1234-2224",R.drawable.img1),
+        Contact("광천식당","9:00-19:00","042-2422-1234",R.drawable.img1)
     )
 
     override fun onCreateView(
