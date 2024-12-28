@@ -57,7 +57,7 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
 
         // 지도 초기 설정
         val hanwhaEagles = LatLng(36.3171, 127.4291) // 서울 좌표
-        googleMap.addMarker(MarkerOptions().position(hanwhaEagles).title("한화이글스파크ㅁ"))
+        googleMap.addMarker(MarkerOptions().position(hanwhaEagles).title("한화생명이글스파크"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanwhaEagles, 16f)) // 줌 레벨 설정
     }
 
