@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.week1.R
@@ -40,7 +41,8 @@ class HomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = contactsAdapter
         }
-
+        // 액션바 다시 표시
+        (activity as? AppCompatActivity)?.supportActionBar?.show()
         return binding.root
     }
 
