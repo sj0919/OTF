@@ -18,6 +18,7 @@ class ContactsAdapter(private val contactList: List<Contact>) : RecyclerView.Ada
         val phoneTextView: TextView = itemView.findViewById(R.id.contactPhoneNumber)
         val contactImageView: ImageView = itemView.findViewById(R.id.contactImage)
         val phoneIcon: ImageView = itemView.findViewById(R.id.phoneIcon)
+        val favoriteIcon:ImageView=itemView.findViewById(R.id.favoriteIcon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -31,6 +32,19 @@ class ContactsAdapter(private val contactList: List<Contact>) : RecyclerView.Ada
         holder.timeTextView.text = contact.time
         holder.phoneTextView.text = contact.phoneNumber
         holder.contactImageView.setImageResource(contact.image)
+
+        val favoriteIconRes=if(contact.isFavorite){
+            R.drawable.favorite_yes
+        }else{
+            R.drawable.favorite
+        }
+        holder.favoriteIcon.setImageResource(favoriteIconRes)
+
+        //즐겨찾기 버튼 클릭 이벤트
+        holder.favoriteIcon.setOnClickListener{
+            contact.isFavorite=!contact.isFavorite
+            notifyItemChanged(position)
+        }
 
         // 전화 아이콘 클릭 시 전화 걸기 기능 구현
         holder.phoneIcon.setOnClickListener {

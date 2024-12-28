@@ -66,6 +66,15 @@
             android:layout_height="wrap_content"
             android:text="Phone Number"
             android:textSize="13sp" />
+        <ImageView
+            android:id="@+id/favoriteIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="end"
+            android:src="@drawable/favorite"
+            android:contentDescription="Favorite Icon" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
