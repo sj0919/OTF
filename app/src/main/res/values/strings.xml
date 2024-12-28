@@ -3,5 +3,6 @@
     <string name="title_home">홈</string>
     <string name="title_dashboard">티켓</string>
     <string name="title_notifications">지도</string>
+    <string name="title_my">마이</string>
     <string name="save">저장</string>
 </resources>
