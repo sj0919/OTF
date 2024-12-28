@@ -9,8 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.week1.data.Contact
+import com.example.week1.ui.my.ContactViewModel
 
-class ContactsAdapter(private val contactList: List<Contact>) : RecyclerView.Adapter<ContactsAdapter.ContactViewHolder>() {
+class ContactsAdapter(private val contactList: List<Contact>,private val viewModel: ContactViewModel) : RecyclerView.Adapter<ContactsAdapter.ContactViewHolder>() {
 
     class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.contactName)
@@ -42,8 +43,7 @@ class ContactsAdapter(private val contactList: List<Contact>) : RecyclerView.Ada
 
         //즐겨찾기 버튼 클릭 이벤트
         holder.favoriteIcon.setOnClickListener{
-            contact.isFavorite=!contact.isFavorite
-            notifyItemChanged(position)
+            viewModel.toggleFavorite(contact)
         }
 
         // 전화 아이콘 클릭 시 전화 걸기 기능 구현
