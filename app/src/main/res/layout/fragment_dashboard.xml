@@ -24,7 +24,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="636dp"
+            android:layout_height="449dp"
             android:scrollbars="vertical" />
 
         <Button
@@ -32,11 +32,11 @@
             android:layout_width="152dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="37dp"
+            android:layout_marginTop="33dp"
             android:background="@drawable/roundcorner"
             android:text="Select Ticket"
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
 
     </LinearLayout>

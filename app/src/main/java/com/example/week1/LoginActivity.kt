@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun navigateToMain() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, ChooseTeam::class.java)
         startActivity(intent)
         //   overridePendingTransition(0, R.anim.fade_out)
         finish()
