@@ -9,8 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.week1.data.Contact
+import com.example.week1.ui.my.ContactViewModel
 
-class ContactsAdapter(private val contactList: List<Contact>) : RecyclerView.Adapter<ContactsAdapter.ContactViewHolder>() {
+class ContactsAdapter(private val contactList: List<Contact>,private val viewModel: ContactViewModel) : RecyclerView.Adapter<ContactsAdapter.ContactViewHolder>() {
 
     class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.contactName)
@@ -18,6 +19,7 @@ class ContactsAdapter(private val contactList: List<Contact>) : RecyclerView.Ada
         val phoneTextView: TextView = itemView.findViewById(R.id.contactPhoneNumber)
         val contactImageView: ImageView = itemView.findViewById(R.id.contactImage)
         val phoneIcon: ImageView = itemView.findViewById(R.id.phoneIcon)
+        val favoriteIcon:ImageView=itemView.findViewById(R.id.favoriteIcon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -31,6 +33,18 @@ class ContactsAdapter(private val contactList: List<Contact>) : RecyclerView.Ada
         holder.timeTextView.text = contact.time
         holder.phoneTextView.text = contact.phoneNumber
         holder.contactImageView.setImageResource(contact.image)
+
+        val favoriteIconRes=if(contact.isFavorite){
+            R.drawable.favorite_yes
+        }else{
+            R.drawable.favorite
+        }
+        holder.favoriteIcon.setImageResource(favoriteIconRes)
+
+        //즐겨찾기 버튼 클릭 이벤트
+        holder.favoriteIcon.setOnClickListener{
+            viewModel.toggleFavorite(contact)
+        }
 
         // 전화 아이콘 클릭 시 전화 걸기 기능 구현
         holder.phoneIcon.setOnClickListener {
