@@ -47,6 +47,13 @@ class HomeFragment : Fragment() {
         )
         binding.spinnerBaseballStadium.adapter = stadiumAdapter
 
+        viewModel.contactList.observe(viewLifecycleOwner) { contacts ->
+            contactsAdapter.updateContacts(contacts)
+        }
+
+        viewModel.filteredContacts.observe(viewLifecycleOwner) { contacts ->
+            contactsAdapter.updateContacts(contacts)
+        }
         // Spinner 선택 시 데이터 필터링
         binding.spinnerBaseballStadium.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -62,11 +69,6 @@ class HomeFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // 아무것도 선택되지 않았을 경우 처리 (필요 시 구현)
             }
-        }
-
-        // 관찰: 선택된 야구장의 맛집 리스트 업데이트
-        viewModel.filteredContacts.observe(viewLifecycleOwner) { contacts ->
-            contactsAdapter.updateContacts(contacts)
         }
 
         return binding.root
