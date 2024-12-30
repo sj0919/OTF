@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,12 +28,16 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(requireActivity())[ContactViewModel::class.java]
 
-        // 설정: RecyclerView
-        contactsAdapter = ContactsAdapter(emptyList(), viewModel)
+        contactsAdapter = ContactsAdapter(emptyList(), viewModel) { contact ->
+            val dialog = ContactDetailsDialogFragment.newInstance(contact)
+            dialog.show(parentFragmentManager, "ContactDetailsDialog")
+        }
+
         binding.contactsRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = contactsAdapter
         }
+
 
         // 설정: Spinner (드롭다운 메뉴)
         val stadiumAdapter = ArrayAdapter(
@@ -66,7 +71,12 @@ class HomeFragment : Fragment() {
 
         return binding.root
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        // 액션바 숨기기
+        (activity as? AppCompatActivity)?.supportActionBar?.hide()
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
