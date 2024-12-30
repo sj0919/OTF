@@ -42,7 +42,9 @@ class DashboardFragment : Fragment() {
         Uri.parse("android.resource://com.example.week1/drawable/tticket3"),
         Uri.parse("android.resource://com.example.week1/drawable/ticket4"),
         Uri.parse("android.resource://com.example.week1/drawable/ticket5"),
-        Uri.parse("android.resource://com.example.week1/drawable/ticket6")
+        Uri.parse("android.resource://com.example.week1/drawable/ticket6"),
+        Uri.parse("android.resource://com.example.week1/drawable/ticket7"),
+        Uri.parse("android.resource://com.example.week1/drawable/ticket8")
     )
 
     override fun onCreateView(
