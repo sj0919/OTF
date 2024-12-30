@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="#FFFFFF">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <!-- ImageView to display the top banner -->
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="top"
+            android:src="@drawable/logo_title" />
+
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:src="@drawable/my_ticket"
-            android:layout_gravity="top" />
+            android:layout_gravity="top"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/my_ticket" />
 
         <!-- RecyclerView to display images -->
 
@@ -24,8 +34,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_height="650dp"
+            android:layout_height="700dp"
+            android:layout_marginTop="100dp"
             android:background="#F5F5F5"
             android:scrollbars="vertical" />
 
@@ -34,7 +44,7 @@
             android:layout_width="152dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="90dp"
             android:background="@drawable/roundcorner"
             android:text="Select Ticket"
             android:textColor="@color/white"
