@@ -16,12 +16,12 @@ class ContactViewModel: ViewModel() {
             Contact("5.5닭갈비","9:00-14:00","042-2142-2224",R.drawable.hanwha5,isFavorite=false,stadium="한화이글스파크"),
             Contact("조마루감자탕","9:00-14:00","042-1112-2224",R.drawable.hanwha6,isFavorite=false,stadium="한화이글스파크"),
             Contact("정식당","9:00-18:00","042-1234-2224",R.drawable.hanwha7,isFavorite=false,stadium="한화이글스파크"),
-            Contact("광천식당","9:00-19:00","042-2422-1234",R.drawable.hanwha8,isFavorite=false,stadium="한화이글스파크"),
-            Contact("명인만두","9:00-19:00","02-2422-1234",R.drawable.hanwha8,isFavorite=false,stadium="잠실야구장"),
-            Contact("통빱","9:00-19:00","02-2422-1234",R.drawable.hanwha8,isFavorite=false,stadium="잠실야구장"),
-            Contact("잭슨피자","9:00-19:00","02-2422-1234",R.drawable.hanwha8,isFavorite=false,stadium="잠실야구장")
+            Contact("광천식당","9:00-19:00","042-2422-1234",R.drawable.hanwha2,isFavorite=false,stadium="한화이글스파크"),
+            Contact("명인만두","9:00-19:00","02-2422-1234",R.drawable.hanwha2,isFavorite=false,stadium="잠실야구장"),
+            Contact("통빱","9:00-19:00","02-2422-1234",R.drawable.hanwha2,isFavorite=false,stadium="잠실야구장"),
+            Contact("잭슨피자","9:00-19:00","02-2422-1234",R.drawable.hanwha2,isFavorite=false,stadium="잠실야구장")
 
-    )
+        )
     )
     val stadiumList=listOf("한화이글스파크","사직야구장","잠실야구장","수원KT위즈파크","인천SSG랜더스필드","대구삼성라이온즈파크","고척스카이돔","창원NC파크","광주기아챔피언스필드")
     private val _filteredContacts=MutableLiveData<List<Contact>>()
@@ -42,4 +42,5 @@ class ContactViewModel: ViewModel() {
         }
         (favoritesList as MutableLiveData).value=_contactList.value?.filter{it.isFavorite}
     }
+    val currentImageIndex = MutableLiveData<Int>()
 }
