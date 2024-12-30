@@ -10,5 +10,6 @@ data class Contact(
     val phoneNumber: String,
     val image: Int,
     val isFavorite: Boolean = false,
-    val stadium: String
+    val stadium: String,
+    val recommendedMenu:List<String>
 ) : Parcelable

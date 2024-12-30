@@ -40,10 +40,13 @@ class ContactDetailsDialogFragment : DialogFragment() {
         val contact = arguments?.getParcelable<Contact>(ARG_CONTACT)
 
         if (contact != null) {
-            //binding.contactName.text = contact.name
-            //binding.contactPhoneNumber.text = contact.phoneNumber
-            //binding.contactTime.text = contact.time
+            binding.contactName.text=contact.name
             binding.contactImage.setImageResource(contact.image)
+            if (contact.recommendedMenu.isNotEmpty()) {
+                binding.recommendedMenu.text = contact.recommendedMenu.joinToString("\n") { "$it" }
+            } else {
+                binding.recommendedMenu.text = "No recommended menu available."
+            }
         }
     }
 
