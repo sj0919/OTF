@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.week1.data.Contact
 import com.example.week1.ui.my.ContactViewModel
 
-class ContactsAdapter(private var contactList: List<Contact>,private val viewModel: ContactViewModel) : RecyclerView.Adapter<ContactsAdapter.ContactViewHolder>() {
+class ContactsAdapter(private var contactList: List<Contact>,private val viewModel: ContactViewModel,private val onContactClick: (Contact) -> Unit) : RecyclerView.Adapter<ContactsAdapter.ContactViewHolder>() {
 
     class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.contactName)
@@ -33,6 +33,11 @@ class ContactsAdapter(private var contactList: List<Contact>,private val viewMod
         holder.timeTextView.text = contact.time
         holder.phoneTextView.text = contact.phoneNumber
         holder.contactImageView.setImageResource(contact.image)
+
+        // 아이템 클릭 리스너
+        holder.itemView.setOnClickListener {
+            onContactClick(contact)
+        }
 
         val favoriteIconRes=if(contact.isFavorite){
             R.drawable.favorite_yes
