@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:background="@drawable/container_border"
     android:backgroundTint="#FFFFFF"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:ignore="MissingConstraints">
 
     <!-- 연락처 이미지 표시 ImageView -->
     <ImageView
@@ -21,14 +22,28 @@
     <!-- 이름 표시 TextView -->
     <TextView
         android:id="@+id/contactName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="8dp"
         android:text="Contact Name"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/contactImage"
-        app:layout_constraintTop_toTopOf="@id/contactImage" />
+        app:layout_constraintTop_toTopOf="@id/contactImage"
+        app:layout_constraintEnd_toStartOf="@id/favoriteIcon" />
+
+
+    <!-- 즐겨찾기 아이콘 ImageView -->
+    <ImageView
+        android:id="@+id/favoriteIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/favorite"
+        android:contentDescription="Favorite Icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/contactName" />
 
     <!-- 시간 표시 TextView -->
     <TextView
@@ -66,14 +81,6 @@
             android:layout_height="wrap_content"
             android:text="Phone Number"
             android:textSize="13sp" />
-        <ImageView
-            android:id="@+id/favoriteIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="8dp"
-            android:layout_gravity="end"
-            android:src="@drawable/favorite"
-            android:contentDescription="Favorite Icon" />
 
     </LinearLayout>
 
