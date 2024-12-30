@@ -18,7 +18,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        // 액션바 숨기기
+        supportActionBar?.hide()
         // Initialize test users
         initializeTestUsers()
 
