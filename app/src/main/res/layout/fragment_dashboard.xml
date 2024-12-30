@@ -5,41 +5,40 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#F5F5F5"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
+        <!-- ImageView to display the top banner -->
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/my_ticket"
+            android:layout_gravity="top" />
 
         <!-- RecyclerView to display images -->
 
         <!-- Button to open gallery and select images -->
 
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:src="@drawable/my_ticket" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="449dp"
+            android:layout_marginTop="50dp"
+            android:layout_height="650dp"
+            android:background="#F5F5F5"
             android:scrollbars="vertical" />
 
         <Button
             android:id="@+id/buttonSelectImage"
             android:layout_width="152dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="33dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="80dp"
             android:background="@drawable/roundcorner"
             android:text="Select Ticket"
             android:textColor="@color/white"
             android:textSize="18sp" />
-
-
-    </LinearLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

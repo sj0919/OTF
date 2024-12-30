@@ -10,8 +10,16 @@ class ChooseTeam : AppCompatActivity() {
 
     private var currentImageIndex = 0
     private val imageList = arrayOf(
-        R.drawable.team_hanhwa,  // 실제 이미지 리소스 파일로 교체
+        R.drawable.team_kia,
+        R.drawable.team_samsung,
         R.drawable.team_lg,
+        R.drawable.team_doosan,
+        R.drawable.team_ssg,
+        R.drawable.team_kt,
+        R.drawable.team_lotte,
+        R.drawable.team_hanwha,
+        R.drawable.team_nc,
+        R.drawable.team_kium
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,22 +27,43 @@ class ChooseTeam : AppCompatActivity() {
         setContentView(R.layout.activity_chooseteam)
 
         val imageView = findViewById<ImageView>(R.id.imageView)
-        val changeImageButton = findViewById<Button>(R.id.next_button)
+        val nextButton = findViewById<Button>(R.id.next_button)
+        val prevButton = findViewById<Button>(R.id.prev_button)
+        val selectButton = findViewById<Button>(R.id.select_button)
 
-        // 초기 이미지 설정
+        // Restore saved instance state
+        savedInstanceState?.let {
+            currentImageIndex = it.getInt("currentImageIndex", 0)
+        }
         imageView.setImageResource(imageList[currentImageIndex])
 
-        // 버튼 클릭 리스너 설정
-        changeImageButton.setOnClickListener {
-            // 인덱스를 증가시켜서 다음 이미지를 표시
+        // Next button functionality
+        nextButton.setOnClickListener {
             currentImageIndex = (currentImageIndex + 1) % imageList.size
-            imageView.setImageResource(imageList[currentImageIndex])
+            updateImage(imageView)
         }
-        val selectButton = findViewById<Button>(R.id.select_button)
+
+        // Previous button functionality
+        prevButton.setOnClickListener {
+            currentImageIndex = if (currentImageIndex - 1 < 0) imageList.size - 1 else currentImageIndex - 1
+            updateImage(imageView)
+        }
+
+        // Select button functionality
         selectButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()
         }
+    }
+
+    private fun updateImage(imageView: ImageView) {
+        val fadeIn = android.view.animation.AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
+        imageView.startAnimation(fadeIn)
+        imageView.setImageResource(imageList[currentImageIndex])
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("currentImageIndex", currentImageIndex)
     }
 }
