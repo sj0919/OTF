@@ -28,6 +28,9 @@ class ChooseTeam : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chooseteam)
 
+        // 액션바 숨기기
+        supportActionBar?.hide()
+
         val imageView = findViewById<ImageView>(R.id.imageView)
         val nextButton = findViewById<Button>(R.id.next_button)
         val prevButton = findViewById<Button>(R.id.prev_button)
@@ -64,9 +67,9 @@ class ChooseTeam : AppCompatActivity() {
         imageView.setImageResource(imageList[currentImageIndex])
     }
 
-
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt("currentImageIndex", currentImageIndex)
     }
+
 }
