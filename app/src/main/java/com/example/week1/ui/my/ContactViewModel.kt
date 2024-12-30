@@ -31,7 +31,7 @@ class ContactViewModel: ViewModel() {
             Contact("진미통닭","9:00-19:00","031-2422-1234",R.drawable.kt4,isFavorite=false,stadium="수원KT위즈파크"),
             Contact("파파존스","9:00-19:00","031-2422-1234",R.drawable.kt5,isFavorite=false,stadium="수원KT위즈파크"),
             Contact("끼부리또","9:00-19:00","031-2422-1234",R.drawable.kt6,isFavorite=false,stadium="수원KT위즈파크"),
-    )
+      )
     )
     val stadiumList=listOf("한화이글스파크","사직야구장","잠실야구장","수원KT위즈파크","인천SSG랜더스필드","대구삼성라이온즈파크","고척스카이돔","창원NC파크","광주기아챔피언스필드")
     private val _filteredContacts=MutableLiveData<List<Contact>>()
@@ -56,5 +56,7 @@ class ContactViewModel: ViewModel() {
     fun setFavoriteIcon(imageView: ImageView, isFavorite: Boolean) {
         imageView.setImageResource(if (isFavorite) R.drawable.favorite_yes else R.drawable.favorite)
     }
+
+    val currentImageIndex = MutableLiveData<Int>()
 
 }

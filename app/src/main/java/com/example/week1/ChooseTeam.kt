@@ -2,9 +2,11 @@ package com.example.week1
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.week1.ui.my.ContactViewModel
 
 class ChooseTeam : AppCompatActivity() {
 
@@ -36,7 +38,6 @@ class ChooseTeam : AppCompatActivity() {
             currentImageIndex = it.getInt("currentImageIndex", 0)
         }
         imageView.setImageResource(imageList[currentImageIndex])
-
         // Next button functionality
         nextButton.setOnClickListener {
             currentImageIndex = (currentImageIndex + 1) % imageList.size
@@ -52,15 +53,17 @@ class ChooseTeam : AppCompatActivity() {
         // Select button functionality
         selectButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            // currentImageIndex를 Intent에 추가
+            intent.putExtra("currentImageIndex", currentImageIndex)
             startActivity(intent)
         }
     }
 
     private fun updateImage(imageView: ImageView) {
-        val fadeIn = android.view.animation.AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
-        imageView.startAnimation(fadeIn)
+        currentImageIndex = if (currentImageIndex < 0) 0 else currentImageIndex % imageList.size
         imageView.setImageResource(imageList[currentImageIndex])
     }
+
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
