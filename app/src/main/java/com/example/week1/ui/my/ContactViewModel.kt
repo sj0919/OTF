@@ -1,7 +1,6 @@
 package com.example.week1.ui.my
 
 import android.widget.ImageView
-import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -46,15 +45,11 @@ class ContactViewModel: ViewModel() {
         _contactList.value?.filter { it.isFavorite }
     )
 
-    fun toggleFavorite(contact:Contact){
-        _contactList.value=_contactList.value?.map{
-            if(it==contact) it.copy(isFavorite=!it.isFavorite) else it
+    fun toggleFavorite(contact:Contact) {
+        _contactList.value = _contactList.value?.map {
+            if (it == contact) it.copy(isFavorite = !it.isFavorite) else it
         }
-        //(favoritesList as MutableLiveData).value=_contactList.value?.filter{it.isFavorite}
-    }
-    @BindingAdapter("favoriteIcon")
-    fun setFavoriteIcon(imageView: ImageView, isFavorite: Boolean) {
-        imageView.setImageResource(if (isFavorite) R.drawable.favorite_yes else R.drawable.favorite)
+        (favoritesList as MutableLiveData).value=_contactList.value?.filter{it.isFavorite}
     }
 
     val currentImageIndex = MutableLiveData<Int>()
