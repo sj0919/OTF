@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.week1.data.Contact
 import com.example.week1.ui.my.ContactViewModel
 
-class ContactsAdapter(private val contactList: List<Contact>,private val viewModel: ContactViewModel) : RecyclerView.Adapter<ContactsAdapter.ContactViewHolder>() {
+class ContactsAdapter(private var contactList: List<Contact>,private val viewModel: ContactViewModel) : RecyclerView.Adapter<ContactsAdapter.ContactViewHolder>() {
 
     class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView: TextView = itemView.findViewById(R.id.contactName)
@@ -54,6 +54,10 @@ class ContactsAdapter(private val contactList: List<Contact>,private val viewMod
         }
     }
 
+    fun updateContacts(newContacts:List<Contact>){
+        this.contactList=newContacts
+        notifyDataSetChanged()
+    }
     override fun getItemCount(): Int {
         return contactList.size
     }
