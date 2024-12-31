@@ -25,11 +25,11 @@ class ContactViewModel: ViewModel() {
             Contact("BHC치킨","9:00-19:00","02-2422-1234",R.drawable.jamsil5,isFavorite=false,stadium="잠실야구장", recommendedMenu = listOf("매운닭강정")),
             Contact("잭슨피자","9:00-19:00","02-2422-1234",R.drawable.jamsil6,isFavorite=false,stadium="잠실야구장",recommendedMenu = listOf("매운닭강정","순한닭강정")),
             Contact("이대로통삼겹","9:00-19:00","031-2422-1234",R.drawable.kt1,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("통삼겹살")),
-            Contact("길푸드","9:00-19:00","031-2422-1234",R.drawable.kt2,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정,순한닭강정")),
-            Contact("보영만두","9:00-19:00","031-2422-1234",R.drawable.kt3,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정,순한닭강정")),
-            Contact("진미통닭","9:00-19:00","031-2422-1234",R.drawable.kt4,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정,순한닭강정")),
-            Contact("파파존스","9:00-19:00","031-2422-1234",R.drawable.kt5,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정,순한닭강정")),
-            Contact("끼부리또","9:00-19:00","031-2422-1234",R.drawable.kt6,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정,순한닭강정"))
+            Contact("길푸드","9:00-19:00","031-2422-1234",R.drawable.kt2,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정","순한닭강정")),
+            Contact("보영만두","9:00-19:00","031-2422-1234",R.drawable.kt3,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정", "순한닭강정")),
+            Contact("진미통닭","9:00-19:00","031-2422-1234",R.drawable.kt4,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정", "순한닭강정")),
+            Contact("파파존스","9:00-19:00","031-2422-1234",R.drawable.kt5,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정", "순한닭강정")),
+            Contact("끼부리또","9:00-19:00","031-2422-1234",R.drawable.kt6,isFavorite=false,stadium="수원KT위즈파크", recommendedMenu = listOf("매운닭강정", "순한닭강정"))
             )
     )
     val stadiumList=listOf("한화이글스파크","사직야구장","잠실야구장","수원KT위즈파크","인천SSG랜더스필드","대구삼성라이온즈파크","고척스카이돔","창원NC파크","광주기아챔피언스필드")
@@ -41,15 +41,54 @@ class ContactViewModel: ViewModel() {
     val contactList: LiveData<List<Contact>>
         get()=_contactList
 
-    val favoritesList: LiveData<List<Contact>> = MutableLiveData(
-        _contactList.value?.filter { it.isFavorite }
-    )
+//    val favoritesList: LiveData<List<Contact>> = MutableLiveData(
+//        _contactList.value?.filter { it.isFavorite }
+//    )
+    private val _favoritesList = MutableLiveData<List<Contact>>()
+    val favoritesList: LiveData<List<Contact>> get() = _favoritesList
 
-    fun toggleFavorite(contact:Contact) {
+    init {
+        // 초기화 시 favoritesList를 contactList에서 가져옴
+        updateFavoritesList()
+    }
+
+//    private val _favoritesList = MutableLiveData<List<Contact>>(emptyList())
+//        val favoritesList: LiveData<List<Contact>> get() = _favoritesList
+
+//    fun toggleFavorite(contact:Contact) {
+//        _filteredContacts.value = _filteredContacts.value?.map {
+//            if (it == contact) it.copy(isFavorite = !it.isFavorite) else it
+//        }
+//        (favoritesList as MutableLiveData).value=_filteredContacts.value?.filter{it.isFavorite}
+//    }
+    fun toggleFavorite(contact: Contact) {
+        // contactList를 업데이트
         _contactList.value = _contactList.value?.map {
             if (it == contact) it.copy(isFavorite = !it.isFavorite) else it
         }
-        (favoritesList as MutableLiveData).value=_contactList.value?.filter{it.isFavorite}
+
+        // 모든 종속 LiveData를 갱신
+        updateFilteredContacts()
+        updateFavoritesList()
+    }
+
+//    private fun updateFilteredContacts() {
+//        _filteredContacts.value = _filteredContacts.value?.let { currentFiltered ->
+//            _contactList.value?.filter { currentFiltered.contains(it) }
+//        } ?: _contactList.value
+//    }
+    private fun updateFilteredContacts() {
+        val currentStadiumFilter = _filteredContacts.value?.firstOrNull()?.stadium
+        _filteredContacts.value = if (currentStadiumFilter != null) {
+            _contactList.value?.filter { it.stadium == currentStadiumFilter }
+        } else {
+            _contactList.value
+        }
+    }
+
+
+    private fun updateFavoritesList() {
+        _favoritesList.value = _contactList.value?.filter { it.isFavorite }
     }
 
     val currentImageIndex = MutableLiveData<Int>()
