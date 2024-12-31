@@ -69,8 +69,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
                 .position(hanwhaEagles)
                 .title("한화생명이글스파크") // 마커 제목
                 .snippet("여기는 한화생명이글스파크입니다.") // 마커 설명 (InfoWindow에 표시됨)
-                //.icon(BitmapDescriptorFactory.fromResource(R.drawable.red_dot_map))
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+                //.icon(BitmapDescriptorFactory.fromResource(R.drawable.mascot_hanhwa))
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
         val seongsimdam = LatLng(36.3276, 127.4272) // 성심당
         googleMap.addMarker(
@@ -191,6 +191,223 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
                 .title("진미통닭") // 마커 제목
                 .snippet("매우 혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+        )
+        val somoon = LatLng(35.1959, 129.0596)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(somoon)
+                .title("소문난 주문진 막국수") // 마커 제목
+                .snippet("혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+        )
+        val twinspig = LatLng(35.1975, 129.0652)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(twinspig)
+                .title("쌍둥이돼지국밥") // 마커 제목
+                .snippet("혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+        )
+        val namdofood = LatLng(35.1939, 129.0596)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(namdofood)
+                .title("남도푸드") // 마커 제목
+                .snippet("매우 혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+        )
+        val doctorK = LatLng(35.1932, 129.0610)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(doctorK)
+                .title("닭터케이 사직야구장점") // 마커 제목
+                .snippet("매우 혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+        )
+        val station = LatLng(37.4368, 126.6926)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(station)
+                .title("스테이션") // 마커 제목
+                .snippet("매우 혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+        )
+        val heogal = LatLng(37.4371, 126.6924)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(heogal)
+                .title("허갈닭강정") // 마커 제목
+                .snippet("매우 혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+        )
+        val kingkong = LatLng(37.4377, 126.6932)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(kingkong)
+                .title("킹콩떡볶이") // 마커 제목
+                .snippet("혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+        )
+        val ddangddang = LatLng(35.8411, 128.6812)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(ddangddang)
+                .title("땅땅치킨") // 마커 제목
+                .snippet("혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+        )
+        val ohjik = LatLng(35.8404, 128.6812)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(ohjik)
+                .title("5직떡볶이") // 마커 제목
+                .snippet("혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+        )
+        val jokbalsuper = LatLng(35.8403, 128.6806)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(jokbalsuper)
+                .title("족발슈퍼") // 마커 제목
+                .snippet("보통..?") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
+        )
+        val gamtan = LatLng(37.4980, 126.8664)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(gamtan)
+                .title("감탄계") // 마커 제목
+                .snippet("보통..") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW))
+        )
+        val otto = LatLng(37.5002, 126.8670)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(otto)
+                .title("오토김밥") // 마커 제목
+                .snippet("보통..") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW))
+        )
+        val dalin = LatLng( 37.4998, 126.8670)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(dalin)
+                .title("백남옥달인손만두") // 마커 제목
+                .snippet("보통..") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW))
+        )
+        val jeil = LatLng( 35.2219, 128.5795)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(jeil)
+                .title("제일버거") // 마커 제목
+                .snippet("보통..") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW))
+        )
+        val realpig = LatLng( 35.2229, 128.5815)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(realpig)
+                .title("리얼피그") // 마커 제목
+                .snippet("보통..") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW))
+        )
+        val rtong = LatLng( 35.2235, 128.5817)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(rtong)
+                .title("알통떡강정") // 마커 제목
+                .snippet("혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+        )
+        val inc = LatLng( 35.1675, 126.8891)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(inc)
+                .title("인크커피") // 마커 제목
+                .snippet("매우 혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+        )
+        val jjaktae = LatLng( 35.1687, 126.8883)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(jjaktae)
+                .title("짝태패밀리") // 마커 제목
+                .snippet("혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+        )
+        val yangdong = LatLng( 35.1536, 126.9007)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(yangdong)
+                .title("양동시장치킨") // 마커 제목
+                .snippet("혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+        )
+        val ssg = LatLng( 37.4369, 126.6932)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(ssg)
+                .title("인천랜더스필드") // 마커 제목
+                .snippet("여기는 SSG랜더스필드입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+        )
+        val jamsil = LatLng( 37.5120, 127.0718)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(jamsil)
+                .title("잠실야구장") // 마커 제목
+                .snippet("여기는 잠실야구장입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+        )
+        val champions = LatLng( 35.1681, 126.8891)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(champions)
+                .title("광주기아챔피언스필드") // 마커 제목
+                .snippet("여기는 광주기아챔피언스필드입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+        )
+        val skydome = LatLng( 37.4982, 126.8670)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(skydome)
+                .title("고척스카이돔") // 마커 제목
+                .snippet("여기는 고척스카이돔입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+        )
+        val wizpark = LatLng( 37.2997, 127.0097)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(wizpark)
+                .title("KT위즈파크") // 마커 제목
+                .snippet("여기는 KT위즈파크입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+        )
+        //nc, 삼성, 롯데
+        val changwon = LatLng( 35.2228, 128.5819)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(changwon)
+                .title("창원NC파크") // 마커 제목
+                .snippet("여기는 창원NC파크입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+        )
+        val lionspark = LatLng( 35.8410, 128.6816)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(lionspark)
+                .title("대구삼성라이온즈파크") // 마커 제목
+                .snippet("여기는 대구삼성라이온즈파크입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+        )
+        val sajik = LatLng( 35.1940, 129.0615)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(sajik)
+                .title("부산사직야구장") // 마커 제목
+                .snippet("여기는 부산사직야구장입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanwhaEagles, 10f)) // 줌 레벨 설정
