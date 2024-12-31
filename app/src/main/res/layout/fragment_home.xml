@@ -8,8 +8,8 @@
     tools:context=".ui.home.HomeFragment">
 
     <ImageView
-        android:layout_width="400dp"
-        android:layout_height="50dp"
+        android:layout_width="401dp"
+        android:layout_height="51dp"
         android:src="@drawable/logo_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
