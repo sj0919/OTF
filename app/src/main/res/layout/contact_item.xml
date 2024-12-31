@@ -10,16 +10,18 @@
     tools:ignore="MissingConstraints">
 
     <!-- 연락처 이미지 표시 ImageView -->
+
+    <!-- 이름 표시 TextView -->
     <ImageView
         android:id="@+id/contactImage"
         android:layout_width="100dp"
         android:layout_height="80dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!-- 이름 표시 TextView -->
     <TextView
         android:id="@+id/contactName"
         android:layout_width="0dp"
