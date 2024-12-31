@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.week1.R
 import com.example.week1.databinding.FragmentNotificationsBinding
+import com.example.week1.ui.CustomInfoWindowAdapter
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -57,6 +58,9 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
+
+        // Custom InfoWindowAdapter 설정
+        googleMap.setInfoWindowAdapter(CustomInfoWindowAdapter(layoutInflater))
 
         // 지도 초기 설정
         val hanwhaEagles = LatLng(36.3171, 127.4291) // 한화생명이글스파크
