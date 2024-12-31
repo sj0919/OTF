@@ -33,8 +33,7 @@ class DashboardFragment : Fragment() {
     private val selectImageLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             uri?.let {
-                viewModel.addImage(uri) // ViewModel에 추가
-                updateRecyclerView()
+                viewModel.addImage(uri) // ViewModel에 이미지 추가
             }
         }
 
@@ -53,9 +52,17 @@ class DashboardFragment : Fragment() {
             adapter = imageAdapter
         }
 
-        updateRecyclerView()
+        // ViewModel의 imageUris를 관찰하여 RecyclerView 업데이트
+        viewModel.imageUris.observe(viewLifecycleOwner) { uris ->
+            imageAdapter.setImages(uris)
+        }
 
-        // 버튼 클릭 시 갤러리에서 이미지 선택
+        // ViewModel의 ticketCount를 관찰하여 티켓 수 업데이트
+        viewModel.ticketCount.observe(viewLifecycleOwner) { count ->
+            binding.ticketCountTextView.text = "티켓 수: $count" // 티켓 수 표시
+        }
+
+        // 갤러리에서 이미지 선택
         binding.buttonSelectImage.setOnClickListener {
             selectImageLauncher.launch("image/*")
         }
@@ -63,13 +70,8 @@ class DashboardFragment : Fragment() {
         return binding.root
     }
 
-    private fun updateRecyclerView() {
-        imageAdapter.setImages(viewModel.imageUris) // ViewModel 데이터로 RecyclerView 업데이트
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
-
