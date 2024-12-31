@@ -19,7 +19,7 @@ class ChooseTeam : AppCompatActivity() {
         R.drawable.team_ssg,
         R.drawable.team_kt,
         R.drawable.team_lotte,
-        R.drawable.team_hanwha,
+        R.drawable.team_hanhwa,
         R.drawable.team_nc,
         R.drawable.team_kium
     )
