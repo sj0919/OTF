@@ -44,6 +44,7 @@ class MyFragment : Fragment() {
         _binding = FragmentMyBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(requireActivity()).get(ContactViewModel::class.java)
 
+        viewModel.favoritesCount.observe(viewLifecycleOwner){count->binding.favoritesCountTextView.text="찜목록 $count"}
         viewModel.favoritesList.observe(viewLifecycleOwner) { favoriteContacts ->
             favoritesAdapter = ContactsAdapter(
                 favoriteContacts,
@@ -58,18 +59,6 @@ class MyFragment : Fragment() {
             }
         }
 
-//        var currentImageIndex = 0
-//        // Bundle에서 currentImageIndex 받기
-//        arguments?.let {
-//            currentImageIndex = it.getInt("currentImageIndex", 0)
-//            // 로그를 통해 값 확인
-//            Log.d("MyFragment", "Received currentImageIndex: $currentImageIndex")
-//        } ?: Log.d("MyFragment", "No arguments received")
-//
-//        // 받은 currentImageIndex로 이미지 설정
-//        val imageView = binding.root.findViewById<ImageView>(R.id.userImage)
-//        imageView.setImageResource(imageList[currentImageIndex])
-
         viewModel.currentImageIndex.observe(viewLifecycleOwner) { index ->
             val imageView = binding.root.findViewById<ImageView>(R.id.userImage)
             imageView.setImageResource(imageList[index])
@@ -82,6 +71,7 @@ class MyFragment : Fragment() {
 
         // 액션바 숨기기
         (activity as? AppCompatActivity)?.supportActionBar?.hide()
+
     }
     override fun onDestroyView() {
         super.onDestroyView()

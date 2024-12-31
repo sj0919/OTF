@@ -24,7 +24,7 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.bind(imageList[position])
+        holder.bind(imageList[position],position)
     }
 
     override fun getItemCount(): Int = imageList.size
@@ -38,9 +38,24 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
         private val ticketImageView: ImageView = itemView.findViewById(R.id.imageViewTicket)
         private val userImageView: ImageView = itemView.findViewById(R.id.imageViewUser)
 
-        fun bind(uri: Uri) {
-            // 티켓 기본 이미지 설정 (이미 설정된 상태라면 생략 가능)
-            ticketImageView.setImageResource(R.drawable.ticket_background)
+        fun bind(uri: Uri, position: Int) {
+            if (position % 8 == 0) {
+                ticketImageView.setImageResource(R.drawable.ticket_background)
+            } else if(position%8==1){
+                ticketImageView.setImageResource(R.drawable.ticket_background2)
+            }else if(position%8==2){
+                ticketImageView.setImageResource(R.drawable.ticket_background3)
+            }else if(position%8==3){
+                ticketImageView.setImageResource(R.drawable.ticket_background4)
+            }else if(position%8==4){
+                ticketImageView.setImageResource(R.drawable.ticket_background5)
+            }else if(position%8==5){
+                ticketImageView.setImageResource(R.drawable.ticket_background6)
+            }else if(position%8==6){
+                ticketImageView.setImageResource(R.drawable.ticket_background7)
+            }else{
+                ticketImageView.setImageResource(R.drawable.ticket_background8)
+            }
 
             // 사용자 이미지 설정
             userImageView.setImageURI(uri)
