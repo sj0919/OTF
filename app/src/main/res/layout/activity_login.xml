@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="300dp"
-        android:layout_height="347dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="250dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="59dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,22 +19,40 @@
 
     <EditText
         android:id="@+id/etLoginId"
-        android:layout_width="320dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_edittext"
         android:hint="아이디"
         android:textColor="#4B4B4B"
+        android:padding="12dp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView2" />
 
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="비밀번호"
+        android:textColor="#4B4B4B"
+        android:padding="12dp"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etLoginId" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="330dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button"
         android:backgroundTint="#141414"
         android:text="로그인"
         android:textColor="#FFFFFF"
@@ -44,17 +62,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="320dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:hint="비밀번호"
-        android:textColor="#4B4B4B"
+    <TextView
+        android:id="@+id/tvFindIdPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="아이디  |  비밀번호 찾기  |  회원가입"
+        android:textColor="#B5B5B5"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etLoginId" />
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
