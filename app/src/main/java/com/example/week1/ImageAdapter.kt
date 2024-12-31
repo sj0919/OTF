@@ -12,11 +12,10 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
     private val imageList = mutableListOf<Uri>()
 
-    // 기존에 이미지 URI들을 받아오는 메서드
     fun setImages(images: List<Uri>) {
-        imageList.clear()  // 기존 아이템을 클리어
-        imageList.addAll(images)  // 새로 받은 이미지를 추가
-        notifyDataSetChanged()  // RecyclerView를 갱신
+        imageList.clear()
+        imageList.addAll(images)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
@@ -30,18 +29,21 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
 
     override fun getItemCount(): Int = imageList.size
 
-    // 이미지 리스트에 이미지 추가
     fun addImage(uri: Uri) {
         imageList.add(uri)
         notifyItemInserted(imageList.size - 1)
     }
 
-    // ViewHolder
     class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val imageView: ImageView = itemView.findViewById(R.id.imageViewItem)
+        private val ticketImageView: ImageView = itemView.findViewById(R.id.imageViewTicket)
+        private val userImageView: ImageView = itemView.findViewById(R.id.imageViewUser)
 
         fun bind(uri: Uri) {
-            imageView.setImageURI(uri)  // ImageView에 URI로 이미지를 표시
+            // 티켓 기본 이미지 설정 (이미 설정된 상태라면 생략 가능)
+            ticketImageView.setImageResource(R.drawable.ticket_background)
+
+            // 사용자 이미지 설정
+            userImageView.setImageURI(uri)
         }
     }
 }
