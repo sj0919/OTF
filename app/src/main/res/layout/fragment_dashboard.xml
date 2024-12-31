@@ -7,6 +7,7 @@
     android:background="#FFFFFF">
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -49,6 +50,19 @@
             android:text="Select Photo"
             android:textColor="@color/white"
             android:textSize="16sp" />
+
+
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/ticketCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="-380dp"
+        android:text="티켓 수: 0"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
