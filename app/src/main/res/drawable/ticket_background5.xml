@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <bitmap
-            android:src="@drawable/ticket1"
+            android:src="@drawable/ticket5"
             android:tileMode="disabled" />
     </item>
 </layer-list>

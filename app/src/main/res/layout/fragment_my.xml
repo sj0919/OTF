@@ -33,7 +33,7 @@
 
         <!-- 둥근 사각형 CardView -->
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="296dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
@@ -45,7 +45,7 @@
 
             <!-- 내부 내용은 세로로 배치하기 위한 LinearLayout -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -62,21 +62,21 @@
 
                 <!-- 티켓 수 -->
                 <TextView
-                    android:id="@+id/ticketCount"
+                    android:id="@+id/ticketCountTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="8dp"
-                    android:text="티켓 수 5개"
+                    android:text="티켓수 0"
                     android:textColor="#888888"
                     android:textSize="16sp" />
 
                 <!-- 찜목록 수 -->
                 <TextView
-                    android:id="@+id/favoritesCount"
+                    android:id="@+id/favoritesCountTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="4dp"
-                    android:text="찜목록 5개"
+                    android:text="찜목록 0"
                     android:textColor="#888888"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -101,7 +101,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/favoritesRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="200dp"
         android:layout_weight="1"
         android:background="#FFFFFF"
         android:clipToPadding="false"

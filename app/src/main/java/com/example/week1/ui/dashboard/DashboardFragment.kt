@@ -20,12 +20,18 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.week1.R
 import com.example.week1.databinding.FragmentDashboardBinding
+import com.example.week1.databinding.FragmentMyBinding
 
 class DashboardFragment : Fragment() {
 
     private lateinit var imageAdapter: ImageAdapter
-    private var _binding: FragmentDashboardBinding? = null
-    private val binding get() = _binding!!
+    private var _dashboardBinding: FragmentDashboardBinding? = null
+    private val dashboardBinding get() = _dashboardBinding!!
+
+    private var _myBinding: FragmentMyBinding? = null
+    private val myBinding get() = _myBinding!!
+
+    private var ticketCount:Int=0
 
     // 갤러리에서 이미지를 선택하는 ActivityResultLauncher
     private val selectImageLauncher =
@@ -33,6 +39,7 @@ class DashboardFragment : Fragment() {
             uri?.let {
                 // 선택된 이미지를 RecyclerView에 표시할 수 있도록 URI 리스트에 추가
                 imageAdapter.addImage(uri)
+                updateTicketCount()
             }
         }
 
@@ -52,24 +59,26 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _dashboardBinding= FragmentDashboardBinding.inflate(inflater, container, false)
+        _myBinding=FragmentMyBinding.inflate(inflater,container,false)
 
         // RecyclerView 설정
         imageAdapter = ImageAdapter()
-        binding.recyclerView.apply {
+        dashboardBinding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = imageAdapter
         }
 
         // 미리 준비된 이미지를 어댑터에 추가
         imageAdapter.setImages(initialImageUris)
+        updateTicketCount()
 
         // 버튼 클릭 시 갤러리에서 이미지 선택
-        binding.buttonSelectImage.setOnClickListener {
+        dashboardBinding.buttonSelectImage.setOnClickListener {
             selectImageLauncher.launch("image/*")
         }
-
-        return binding.root
+        setupRecyclerView()
+        return dashboardBinding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -78,8 +87,21 @@ class DashboardFragment : Fragment() {
         (activity as? AppCompatActivity)?.supportActionBar?.hide()
     }
 
+    private fun setupRecyclerView(){
+        imageAdapter=ImageAdapter()
+        dashboardBinding.recyclerView.apply{
+            layoutManager=LinearLayoutManager(requireContext())
+            adapter=imageAdapter
+        }
+        imageAdapter.setImages(initialImageUris)
+    }
+    private fun updateTicketCount(){
+        ticketCount=imageAdapter.itemCount
+        myBinding.ticketCountTextView.text="티켓수 $ticketCount"
+    }
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        _dashboardBinding = null
+        _myBinding=null
     }
 }

@@ -73,24 +73,6 @@ class ContactViewModel: ViewModel() {
             Contact("짝태패밀리","9:00-19:00","055-2422-1234",R.drawable.kia4,isFavorite=false,stadium="광주기아챔피언스필드", recommendedMenu = listOf("오징어")),
             Contact("시골집","9:00-19:00","055-2422-1234",R.drawable.kia5,isFavorite=false,stadium="광주기아챔피언스필드", recommendedMenu = listOf("애호박찌개")),
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             )
     )
     val stadiumList=listOf("한화이글스파크","사직야구장","잠실야구장","수원KT위즈파크","인천SSG랜더스필드","대구삼성라이온즈파크","고척스카이돔","창원NC파크","광주기아챔피언스필드")
@@ -102,26 +84,17 @@ class ContactViewModel: ViewModel() {
     val contactList: LiveData<List<Contact>>
         get()=_contactList
 
-//    val favoritesList: LiveData<List<Contact>> = MutableLiveData(
-//        _contactList.value?.filter { it.isFavorite }
-//    )
     private val _favoritesList = MutableLiveData<List<Contact>>()
     val favoritesList: LiveData<List<Contact>> get() = _favoritesList
+
+    private val _favoritesCount=MutableLiveData<Int>()
+    val favoritesCount:LiveData<Int>get()=_favoritesCount
 
     init {
         // 초기화 시 favoritesList를 contactList에서 가져옴
         updateFavoritesList()
     }
 
-//    private val _favoritesList = MutableLiveData<List<Contact>>(emptyList())
-//        val favoritesList: LiveData<List<Contact>> get() = _favoritesList
-
-//    fun toggleFavorite(contact:Contact) {
-//        _filteredContacts.value = _filteredContacts.value?.map {
-//            if (it == contact) it.copy(isFavorite = !it.isFavorite) else it
-//        }
-//        (favoritesList as MutableLiveData).value=_filteredContacts.value?.filter{it.isFavorite}
-//    }
     fun toggleFavorite(contact: Contact) {
         // contactList를 업데이트
         _contactList.value = _contactList.value?.map {
@@ -133,11 +106,6 @@ class ContactViewModel: ViewModel() {
         updateFavoritesList()
     }
 
-//    private fun updateFilteredContacts() {
-//        _filteredContacts.value = _filteredContacts.value?.let { currentFiltered ->
-//            _contactList.value?.filter { currentFiltered.contains(it) }
-//        } ?: _contactList.value
-//    }
     private fun updateFilteredContacts() {
         val currentStadiumFilter = _filteredContacts.value?.firstOrNull()?.stadium
         _filteredContacts.value = if (currentStadiumFilter != null) {
@@ -147,9 +115,12 @@ class ContactViewModel: ViewModel() {
         }
     }
 
-
     private fun updateFavoritesList() {
         _favoritesList.value = _contactList.value?.filter { it.isFavorite }
+        updateFavoritesCount()
+    }
+    private fun updateFavoritesCount(){
+        _favoritesCount.value=_favoritesList.value?.size?:0
     }
 
     val currentImageIndex = MutableLiveData<Int>()
