@@ -25,83 +25,51 @@ import com.example.week1.databinding.FragmentMyBinding
 class DashboardFragment : Fragment() {
 
     private lateinit var imageAdapter: ImageAdapter
-    private var _dashboardBinding: FragmentDashboardBinding? = null
-    private val dashboardBinding get() = _dashboardBinding!!
+    private var _binding: FragmentDashboardBinding? = null
+    private val binding get() = _binding!!
 
-    private var _myBinding: FragmentMyBinding? = null
-    private val myBinding get() = _myBinding!!
+    private lateinit var viewModel: DashboardViewModel
 
-    private var ticketCount:Int=0
-
-    // 갤러리에서 이미지를 선택하는 ActivityResultLauncher
     private val selectImageLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             uri?.let {
-                // 선택된 이미지를 RecyclerView에 표시할 수 있도록 URI 리스트에 추가
-                imageAdapter.addImage(uri)
-                updateTicketCount()
+                viewModel.addImage(uri) // ViewModel에 추가
+                updateRecyclerView()
             }
         }
-
-    private val initialImageUris = listOf(
-        Uri.parse("android.resource://com.example.week1/drawable/photo1"),
-        Uri.parse("android.resource://com.example.week1/drawable/photo2"),
-        Uri.parse("android.resource://com.example.week1/drawable/photo3"),
-        Uri.parse("android.resource://com.example.week1/drawable/photo4"),
-        Uri.parse("android.resource://com.example.week1/drawable/photo5"),
-        Uri.parse("android.resource://com.example.week1/drawable/photo6"),
-        Uri.parse("android.resource://com.example.week1/drawable/photo7"),
-        Uri.parse("android.resource://com.example.week1/drawable/photo8")
-    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _dashboardBinding= FragmentDashboardBinding.inflate(inflater, container, false)
-        _myBinding=FragmentMyBinding.inflate(inflater,container,false)
+        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(this).get(DashboardViewModel::class.java) // ViewModel 초기화
 
         // RecyclerView 설정
         imageAdapter = ImageAdapter()
-        dashboardBinding.recyclerView.apply {
+        binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = imageAdapter
         }
 
-        // 미리 준비된 이미지를 어댑터에 추가
-        imageAdapter.setImages(initialImageUris)
-        updateTicketCount()
+        updateRecyclerView()
 
         // 버튼 클릭 시 갤러리에서 이미지 선택
-        dashboardBinding.buttonSelectImage.setOnClickListener {
+        binding.buttonSelectImage.setOnClickListener {
             selectImageLauncher.launch("image/*")
         }
-        setupRecyclerView()
-        return dashboardBinding.root
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        // 액션바 숨기기
-        (activity as? AppCompatActivity)?.supportActionBar?.hide()
+        return binding.root
     }
 
-    private fun setupRecyclerView(){
-        imageAdapter=ImageAdapter()
-        dashboardBinding.recyclerView.apply{
-            layoutManager=LinearLayoutManager(requireContext())
-            adapter=imageAdapter
-        }
-        imageAdapter.setImages(initialImageUris)
+    private fun updateRecyclerView() {
+        imageAdapter.setImages(viewModel.imageUris) // ViewModel 데이터로 RecyclerView 업데이트
     }
-    private fun updateTicketCount(){
-        ticketCount=imageAdapter.itemCount
-        myBinding.ticketCountTextView.text="티켓수 $ticketCount"
-    }
+
     override fun onDestroyView() {
         super.onDestroyView()
-        _dashboardBinding = null
-        _myBinding=null
+        _binding = null
     }
 }
+
