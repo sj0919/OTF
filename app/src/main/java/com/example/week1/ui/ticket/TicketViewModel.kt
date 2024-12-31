@@ -1,11 +1,11 @@
-package com.example.week1.ui.dashboard
+package com.example.week1.ui.ticket
 
 import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class TicketViewModel : ViewModel() {
     // 초기 URI 리스트 저장
     private val _imageUris = mutableListOf(
         Uri.parse("android.resource://com.example.week1/drawable/photo1"),
