@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <!-- 티켓 배경 이미지 -->
+        <bitmap
+            android:src="@drawable/ticket1"
+            android:tileMode="disabled" />
+    </item>
+</layer-list>
