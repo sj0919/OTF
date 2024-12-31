@@ -31,6 +31,7 @@ class ContactDetailsDialogFragment : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = DialogContactDetailsBinding.inflate(inflater, container, false)
+        dialog?.window?.setBackgroundDrawableResource(R.drawable.rounded_background)
         return binding.root
     }
 

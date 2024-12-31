@@ -29,11 +29,12 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="5dp"
         android:text="Contact Name"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/favoriteIcon"
         app:layout_constraintStart_toEndOf="@id/contactImage"
-        app:layout_constraintTop_toTopOf="@id/contactImage"
-        app:layout_constraintEnd_toStartOf="@id/favoriteIcon" />
+        app:layout_constraintTop_toTopOf="@id/contactImage" />
 
 
     <!-- 즐겨찾기 아이콘 ImageView -->
