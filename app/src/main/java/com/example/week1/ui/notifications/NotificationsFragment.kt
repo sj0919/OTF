@@ -68,7 +68,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(hanwhaEagles)
                 .title("한화생명이글스파크") // 마커 제목
-                .snippet("여기는 한화생명이글스파크입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("여기는 한화생명이글스파크입니다."+"\n"+
+                        "굿즈샵:혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
                 //.icon(BitmapDescriptorFactory.fromResource(R.drawable.mascot_hanhwa))
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
@@ -341,7 +342,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(yangdong)
                 .title("양동시장치킨") // 마커 제목
-                .snippet("혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("혼잡!!"+"\n"+
+                        "굿즈샵:매우 혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
         )
         val ssg = LatLng( 37.4369, 126.6932)
@@ -349,7 +351,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(ssg)
                 .title("인천랜더스필드") // 마커 제목
-                .snippet("여기는 SSG랜더스필드입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("여기는 SSG랜더스필드입니다."+"\n"+
+                        "굿즈샵:혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
         val jamsil = LatLng( 37.5120, 127.0718)
@@ -357,7 +360,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(jamsil)
                 .title("잠실야구장") // 마커 제목
-                .snippet("여기는 잠실야구장입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("여기는 잠실야구장입니다."+"\n"+
+                        "굿즈샵:혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
         val champions = LatLng( 35.1681, 126.8891)
@@ -365,7 +369,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(champions)
                 .title("광주기아챔피언스필드") // 마커 제목
-                .snippet("여기는 광주기아챔피언스필드입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("여기는 광주기아챔피언스필드입니다."+"\n"+
+                        "굿즈샵:혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
         val skydome = LatLng( 37.4982, 126.8670)
@@ -373,7 +378,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(skydome)
                 .title("고척스카이돔") // 마커 제목
-                .snippet("여기는 고척스카이돔입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("여기는 고척스카이돔입니다."+"\n"+
+                        "굿즈샵:보통!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
         val wizpark = LatLng( 37.2997, 127.0097)
@@ -381,7 +387,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(wizpark)
                 .title("KT위즈파크") // 마커 제목
-                .snippet("여기는 KT위즈파크입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("여기는 KT위즈파크입니다."+"\n"+
+                        "굿즈샵:보통!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
         //nc, 삼성, 롯데
@@ -390,7 +397,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(changwon)
                 .title("창원NC파크") // 마커 제목
-                .snippet("여기는 창원NC파크입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("여기는 창원NC파크입니다."+"\n"+
+                    "굿즈샵:혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
         val lionspark = LatLng( 35.8410, 128.6816)
@@ -398,7 +406,8 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(lionspark)
                 .title("대구삼성라이온즈파크") // 마커 제목
-                .snippet("여기는 대구삼성라이온즈파크입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("여기는 대구삼성라이온즈파크입니다.\n" +
+            "굿즈샵:혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
         val sajik = LatLng( 35.1940, 129.0615)
@@ -406,11 +415,12 @@ class NotificationsFragment : Fragment(), OnMapReadyCallback {
             MarkerOptions()
                 .position(sajik)
                 .title("부산사직야구장") // 마커 제목
-                .snippet("여기는 부산사직야구장입니다.") // 마커 설명 (InfoWindow에 표시됨)
+                .snippet("여기는 부산사직야구장입니다.\n" +
+                        "굿즈샵:혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
 
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanwhaEagles, 10f)) // 줌 레벨 설정
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanwhaEagles, 16f)) // 줌 레벨 설정
     }
 
     override fun onDestroyView() {

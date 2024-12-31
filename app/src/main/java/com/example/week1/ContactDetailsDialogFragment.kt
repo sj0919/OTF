@@ -44,7 +44,7 @@ class ContactDetailsDialogFragment : DialogFragment() {
             binding.contactName.text=contact.name
             binding.contactImage.setImageResource(contact.image)
             if (contact.recommendedMenu.isNotEmpty()) {
-                binding.recommendedMenu.text = contact.recommendedMenu.joinToString("\n") { "$it" }
+                binding.recommendedMenu.text = contact.recommendedMenu.joinToString("\n") { "⚾$it⚾" }
             } else {
                 binding.recommendedMenu.text = "No recommended menu available."
             }
