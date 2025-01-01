@@ -150,7 +150,8 @@ Off the Fence!
   </tr>
   <tr>
     <td valign="top">
-      <img src="https://github.com/user-attachments/assets/4875d8de-9804-4f45-89b1-7c75fb680ba6" />
+      <img src="[https://github.com/user-attachments/assets/4875d8de-9804-4f45-89b1-7c75fb680ba6](https://github.com/user-attachments/assets/acea1b08-2b57-4308-898e-8f8eecfd34aa)" />
+
     </td>
     <td valign="top">
       <img src="https://github.com/user-attachments/assets/3c4f93b2-47eb-4bf4-b564-dfd59849581a" />
