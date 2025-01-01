@@ -143,18 +143,18 @@ Off the Fence!
     ➡ Tab4에서 하트 아이콘을 눌러 찜을 해제할 수 있습니다. 이 동작은 Tab1에 바로 적용됩니다
 
 
-<table>
-  <tr>
-    <th width="350px" align="center">1.로그인</th>
-    <th width="350px" align="center">2.팀선택</th>
-  </tr>
-  <tr>
-    <td valign="top">
-      <![offthefence_login-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/3d3425fd-9958-488d-8f7c-254c748d77d3)/>
+![image](https://github.com/user-attachments/assets/50183e16-5cd2-47da-a9db-f646de19bd8f)
 
-    </td>
-    <td valign="top">
-      <img src="https://github.com/user-attachments/assets/3c4f93b2-47eb-4bf4-b564-dfd59849581a" />
-    </td>
-  </tr>
-</table>
+![화면 캡처 2025-01-01 194607](https://github.com/user-attachments/assets/75a22d64-db63-4d05-8162-080d4a3a341a)
+
+![화면 캡처 2025-01-01 194314](https://github.com/user-attachments/assets/e2a6be93-3991-4bbe-8e74-c8787d43b91d)
+
+![화면 캡처 2025-01-01 194352](https://github.com/user-attachments/assets/6171dd78-953d-4e5d-8e59-ead8de01cd97)
+
+![image](https://github.com/user-attachments/assets/042e779b-bb56-40cf-b6b4-c972505e3ba7)
+
+![화면 캡처 2025-01-01 194427](https://github.com/user-attachments/assets/9d7cc87f-29c4-4bbc-bade-c4bdfd6eea47)
+
+
+## APK 파일 구글 드라이브 링크
+https://drive.google.com/drive/folders/1IBE7Ih0Pm5D9maa8LTC4HVg2oxK0ybZO?dmr=1&ec=wgc-drive-globalnav-goto
