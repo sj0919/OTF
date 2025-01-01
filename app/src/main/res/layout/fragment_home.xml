@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,12 +8,13 @@
 
     <ImageView
         android:layout_width="401dp"
-        android:layout_height="51dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="7dp"
         android:src="@drawable/logo_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!-- Spinner -->
+
     <Spinner
         android:id="@+id/spinnerBaseballStadium"
         android:layout_width="match_parent"
@@ -29,16 +29,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- RecyclerView -->
+    <!-- ViewPager2 for the sliding banner -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/bannerViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerBaseballStadium"/>
+
+    <!-- RecyclerView for contacts -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contactsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="515dp"
+        android:layout_height="418dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerBaseballStadium"
+        app:layout_constraintTop_toBottomOf="@id/bannerViewPager"
         app:layout_constraintVertical_bias="0.0" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
