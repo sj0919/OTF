@@ -19,6 +19,9 @@ class ContactViewModel: ViewModel() {
             Contact("조마루감자탕","영업시간9:00-14:00","042-1112-2224",R.drawable.hanwha6,isFavorite=false,stadium="한화이글스파크", recommendedMenu = listOf("매운닭강정","순한닭강정")),
             Contact("정식당","영업시간 9:00-18:00","042-1234-2224",R.drawable.hanwha7,isFavorite=false,stadium="한화이글스파크", recommendedMenu = listOf("매운닭강정","순한닭강정")),
             Contact("광천식당","영업시간 9:00-19:00","042-2422-1234",R.drawable.hanwha2,isFavorite=false,stadium="한화이글스파크", recommendedMenu = listOf("매운닭강정","순한닭강정")),
+            Contact("야구장왕돈까스","영업시간 9:00-19:00","042-2422-1234",R.drawable.hanwha2,isFavorite=false,stadium="한화이글스파크", recommendedMenu = listOf("왕돈까스")),
+            Contact("오늘은족발","영업시간 9:00-19:00","042-2422-1234",R.drawable.hanwha2,isFavorite=false,stadium="한화이글스파크", recommendedMenu = listOf("족발","매운족발")),
+            Contact("홈런친닭","영업시간 9:00-19:00","042-2422-1234",R.drawable.hanwha2,isFavorite=false,stadium="한화이글스파크", recommendedMenu = listOf("새우강정","닭강정")),
             //잠실
             Contact("명인만두","영업시간 9:00-19:00","02-2422-1234",R.drawable.jamsil1,isFavorite=false,stadium="잠실야구장", recommendedMenu = listOf("고기만두","김치만두")),
             Contact("통빱","영업시간 9:00-19:00","02-2422-1234",R.drawable.jamsil2,isFavorite=false,stadium="잠실야구장", recommendedMenu = listOf("삼겹살정식","통비빔면")),
