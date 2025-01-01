@@ -142,3 +142,18 @@ Off the Fence!
 
     ➡ Tab4에서 하트 아이콘을 눌러 찜을 해제할 수 있습니다. 이 동작은 Tab1에 바로 적용됩니다
 
+
+<table>
+  <tr>
+    <th width="350px" align="center">1.로그인</th>
+    <th width="350px" align="center">2.팀선택</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <img src="https://github.com/user-attachments/assets/4875d8de-9804-4f45-89b1-7c75fb680ba6" />
+    </td>
+    <td valign="top">
+      <img src="https://github.com/user-attachments/assets/3c4f93b2-47eb-4bf4-b564-dfd59849581a" />
+    </td>
+  </tr>
+</table>
