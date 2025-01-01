@@ -1,6 +1,6 @@
 
 # Off the Fence : 펜스 너머에서도 언제나, Off the Fence! ⚾
-![image]((https://github.com/sj0919/OTF/issues/38#issue-2764865079))
+![제목 없는 디자인 (2)](https://github.com/user-attachments/assets/d9eac9a0-3e95-49ee-85e4-e3a7f1d1d7a5)
 
 ## 👨‍🏫 프로젝트 소개
 직관 야구 팬들이 겪는 어려움을 해결하기 위해 프로젝트를 기획했습니다.
