@@ -1,6 +1,6 @@
 
 # Off the Fence : 펜스 너머에서도 언제나, Off the Fence! ⚾
-![image](https://github.com/minzero31/MadCamp-1week-Android/assets/154976598/764f9c47-2a13-41e8-9b80-6896f5286843)
+![image]([https://github.com/minzero31/MadCamp-1week-Android/assets/154976598/764f9c47-2a13-41e8-9b80-6896f5286843](https://github.com/sj0919/OTF/issues/38#issue-2764865079))
 
 ## 👨‍🏫 프로젝트 소개
 직관 야구 팬들이 겪는 어려움을 해결하기 위해 프로젝트를 기획했습니다.
