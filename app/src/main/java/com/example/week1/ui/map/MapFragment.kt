@@ -408,13 +408,37 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         )
         val sajik = LatLng( 35.1940, 129.0615)
+                    googleMap.addMarker(
+                    MarkerOptions()
+                        .position(sajik)
+                        .title("부산사직야구장") // 마커 제목
+                        .snippet("여기는 부산사직야구장입니다.\n" +
+                                "굿즈샵:혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+        )
+        val homerun = LatLng( 36.3179, 127.4285)
         googleMap.addMarker(
             MarkerOptions()
-                .position(sajik)
-                .title("부산사직야구장") // 마커 제목
-                .snippet("여기는 부산사직야구장입니다.\n" +
-                        "굿즈샵:혼잡!!") // 마커 설명 (InfoWindow에 표시됨)
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .position(homerun)
+                .title("홈런친닭") // 마커 제목
+                .snippet("보통..?") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
+        )
+        val today = LatLng( 36.3180, 127.4288)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(today)
+                .title("오늘은족발") // 마커 제목
+                .snippet("보통..?") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
+        )
+        val king = LatLng( 36.3182, 127.4293)
+        googleMap.addMarker(
+            MarkerOptions()
+                .position(king)
+                .title("야구장왕돈까스") // 마커 제목
+                .snippet("보통") // 마커 설명 (InfoWindow에 표시됨)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW))
         )
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanwhaEagles, 16f)) // 줌 레벨 설정
