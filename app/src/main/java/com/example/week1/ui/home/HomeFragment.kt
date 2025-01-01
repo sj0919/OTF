@@ -10,7 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager2.widget.ViewPager2
+import com.example.week1.BannerAdapter
 import com.example.week1.ContactsAdapter
+import com.example.week1.R
 import com.example.week1.databinding.FragmentHomeBinding
 import com.example.week1.ui.my.ContactViewModel
 
@@ -21,12 +24,18 @@ class HomeFragment : Fragment() {
 
     private lateinit var contactsAdapter: ContactsAdapter
     private lateinit var viewModel: ContactViewModel
+    private lateinit var bannerAdapter:BannerAdapter
+    private lateinit var bannerViewPager: ViewPager2
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(requireActivity())[ContactViewModel::class.java]
+
+        bannerViewPager = binding.bannerViewPager
+        bannerAdapter = BannerAdapter(getBannerImages())  // Get banner images
+        bannerViewPager.adapter = bannerAdapter
 
         contactsAdapter = ContactsAdapter(emptyList(), viewModel) { contact ->
             val dialog = ContactDetailsDialogFragment.newInstance(contact)
@@ -79,8 +88,14 @@ class HomeFragment : Fragment() {
         // 액션바 숨기기
         (activity as? AppCompatActivity)?.supportActionBar?.hide()
     }
+
+    private fun getBannerImages(): List<Int> {
+        return listOf(R.drawable.banner1, R.drawable.banner1, R.drawable.banner1) // Example
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
+

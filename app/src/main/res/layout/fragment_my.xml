@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:orientation="vertical">
+    android:background="#ECECEC"
+    android:backgroundTint="#FFFFFF"
+    android:orientation="vertical"
+    >
 
     <!-- 사용자 정보 카드뷰 -->
 
@@ -17,14 +19,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F8F8F8F8"
+        android:background="@drawable/inset_shadow"
         android:orientation="horizontal"
         android:padding="0dp"
-        app:cardElevation="4dp">
-
-        <!-- 캐릭터 이미지 -->
-
-        <!-- 둥근 사각형 CardView -->
+        
+        >
 
         <ImageView
             android:id="@+id/userImage"
@@ -101,6 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginBottom="60dp"
+        app:cardElevation="3dp"
         android:layout_weight="1"
         android:background="#FFFFFF"
         android:clipToPadding="false"
