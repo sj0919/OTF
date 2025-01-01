@@ -90,7 +90,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun getBannerImages(): List<Int> {
-        return listOf(R.drawable.banner1, R.drawable.banner1, R.drawable.banner1) // Example
+        return listOf(R.drawable.banner1, R.drawable.banner2, R.drawable.banner3,R.drawable.banner4,R.drawable.banner5,R.drawable.banner6,R.drawable.banner7,R.drawable.banner8,R.drawable.banner9,R.drawable.banner10) // Example
     }
 
     override fun onDestroyView() {
